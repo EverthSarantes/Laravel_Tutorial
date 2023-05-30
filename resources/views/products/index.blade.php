@@ -30,7 +30,7 @@
                         <td>{{ $product->brand->name }}</td>
                         <td>{{ $product->description }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">
+                            <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary">
                                 <i class="fas fa-eye"></i>
                             </a>
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-success">

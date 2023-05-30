@@ -61,4 +61,11 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('message', 'El producto ha sido actualizado exitosamente'); // Retorna a la vista de los Productos
     }
+
+    public function show($id)  // Muestra los Productos
+    {
+        $product = Product::findOrFail($id); // Obtiene el Producto
+        $brand = $product->brand; // Obtiene la Marca del Producto
+        return view('products.show', compact('product', 'brand')); // Retorna la vista de los Productos
+    }
 }

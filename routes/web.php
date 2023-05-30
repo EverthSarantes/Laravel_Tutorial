@@ -24,5 +24,6 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('prod
 Route::post('/products', [ProductController::class, 'store'])->name('products.store'); // Ruta para Guardar los Productos
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit'); // Ruta para Editar los Productos
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update'); // Ruta para Actualizar los Productos
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show'); // Ruta para Mostrar los Productos
 
 
