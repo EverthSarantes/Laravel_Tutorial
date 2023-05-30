@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('name', 60); // Nombre del Producto con un Limite de 60 Caracteres
             $table->string('brand'); // Marca del Producto
             $table->text('description'); // Descripcion del Producto;
+
+            // Relacionar la Tabla Products con la Tabla Brands
+            $table->integer('brand_id')->unsigned();
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps(); // Fecha de Creacion y Actualizacion del Producto
         });
     }
