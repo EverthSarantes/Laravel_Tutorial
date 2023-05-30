@@ -36,7 +36,7 @@
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-success">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <form action="#" method="POST" class="d-inline">
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">
