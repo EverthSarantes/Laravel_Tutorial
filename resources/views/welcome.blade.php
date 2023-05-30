@@ -11,7 +11,7 @@
                         <p>En este proyecto, aprenderás paso a paso cómo realizar un CRUD básico en Laravel.</p>
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <a href="#" title="Aqui irás directamente al resultado del Proyecto para que lo Pruebes"
+                                <a href="{{ route('products.index')}}" title="Aqui irás directamente al resultado del Proyecto para que lo Pruebes"
                                     class="btn btn-primary">
                                     <i class="fas fa-rocket"></i> Ir al Proyecto
                                 </a>
