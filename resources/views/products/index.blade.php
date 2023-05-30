@@ -7,17 +7,17 @@
         @if (session('success'))
             <!-- Mensaje de éxito después de crear -->
             <div class="alert alert-primary">
-                {{ session('success') }}
+                <i class="fas fa-check-circle text-primary"></i> {{ session('success') }}
             </div>
         @elseif (session('message'))
             <!-- Mensaje después de actualizar -->
             <div class="alert alert-success">
-                {{ session('message') }}
+                <i class="fas fa-check-circle text-success"></i> {{ session('message') }}
             </div>
         @elseif (session('alert'))
             <!-- Mensaje después de eliminar -->
             <div class="alert alert-danger">
-                {{ session('alert') }}
+                <i class="fas fa-exclamation-circle text-danger"></i> {{ session('alert') }}
             </div>
         @endif
 
@@ -32,10 +32,10 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Marca</th>
-                    <th>Descripción</th>
-                    <th>Acciones</th>
+                    <th><i class="fas fa-heading text-primary"></i> Nombre</th>
+                    <th><i class="fas fa-tag text-info"></i> Marca</th>
+                    <th><i class="fas fa-info-circle text-warning"></i> Descripción</th>
+                    <th><i class="fas fa-cogs text-secondary"></i> Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,16 +46,16 @@
                         <td>{{ $product->description }}</td>
                         <td>
                             <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary">
-                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-eye"></i> Ver
                             </a>
                             <a href="{{ route('products.edit', $product->id) }}" class="btn btn-success">
-                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-edit"></i> Editar
                             </a>
                             <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-trash-alt"></i> Eliminar
                                 </button>
                             </form>
                         </td>

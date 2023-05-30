@@ -6,14 +6,22 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ $product->name }}</h5> <!-- Esto es para que se muestre el nombre del producto -->
-                <h6 class="card-subtitle mb-2 text-muted">{{ $brand->name }}</h6> <!-- Esto es para que se muestre el nombre de la marca del producto -->
-                <p class="card-text">{{ $product->description }}</p> <!-- Esto es para que se muestre la descripcion del producto -->
+                <h5 class="card-title">
+                    <i class="fas fa-heading text-primary"></i> {{ $product->name }}
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <i class="fas fa-tag text-info"></i> {{ $brand->name }}
+                </h6>
+                <p class="card-text">
+                    <i class="fas fa-info-circle text-warning"></i> {{ $product->description }}
+                </p>
             </div>
         </div>
 
         <div class="mt-3">
-            <a href="{{ route('products.index') }}" class="btn btn-secondary">Volver</a> <!-- Este es el boton para volver a la lista de productos -->
+            <a href="{{ route('products.index') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
         </div>
     </div>
 @endsection
