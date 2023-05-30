@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'brand', 'description', 'brand_id']; // Campos que se pueden Llenar
+    protected $fillable = ['name', 'description', 'brand_id']; // Campos que se pueden Llenar
 
     public function brand() // Relación de uno a muchos inversa
     {

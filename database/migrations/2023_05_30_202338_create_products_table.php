@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id'); // Id del Producto con un Incremento
             $table->string('name', 60); // Nombre del Producto con un Limite de 60 Caracteres
-            $table->string('brand'); // Marca del Producto
             $table->text('description'); // Descripcion del Producto;
 
             // Relacionar la Tabla Products con la Tabla Brands
-            $table->integer('brand_id')->unsigned();
+            $table->integer('brand_id')->unsigned(); // Marca del Producto
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps(); // Fecha de Creacion y Actualizacion del Producto
