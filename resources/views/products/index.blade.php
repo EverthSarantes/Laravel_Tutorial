@@ -21,6 +21,9 @@
             </div>
         @endif
 
+        <a href="/" class="btn btn-secondary mb-3">
+            <i class="fas fa-arrow-left"></i> Volver a la vista de bienvenida
+        </a>
 
         <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">
             <i class="fas fa-plus"></i> Agregar Nuevo Producto
