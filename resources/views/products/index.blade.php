@@ -33,7 +33,7 @@
                             <a href="#" class="btn btn-primary">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="#" class="btn btn-success">
+                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-success">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <form action="#" method="POST" class="d-inline">

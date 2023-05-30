@@ -38,4 +38,27 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success', 'Producto creado correctamente'); // Retorna a la vista de los Productos
     }
+
+    public function edit($id) // Retorna la vista para Editar los Productos
+    {
+        $product = Product::findOrFail($id); // Obtiene el Producto
+        $brands = Brand::all(); // Obtiene todas las Marcas
+
+        return view('products.edit', compact('product', 'brands')); // Retorna la vista para Editar los Productos
+    }
+
+    public function update(Request $request, $id) // Actualiza los Productos
+    {
+        $product = Product::findOrFail($id); // Obtiene el Producto
+
+        $request->validate([ // Valida los campos
+            'name' => 'required',
+            'brand_id' => 'required|exists:brands,id',
+            'description' => 'required',
+        ]);
+
+        $product->update($request->all()); // Actualiza el Producto
+
+        return redirect()->route('products.index')->with('message', 'El producto ha sido actualizado exitosamente'); // Retorna a la vista de los Productos
+    }
 }
