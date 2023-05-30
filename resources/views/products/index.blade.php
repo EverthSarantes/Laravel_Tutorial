@@ -4,11 +4,23 @@
     <div class="container">
         <h1>Productos</h1>
 
-        @if (session('message')) <!-- Este es un mensaje que se muestra despues de crear, editar o eliminar un producto -->
+        @if (session('success'))
+            <!-- Mensaje de éxito después de crear -->
+            <div class="alert alert-primary">
+                {{ session('success') }}
+            </div>
+        @elseif (session('message'))
+            <!-- Mensaje después de actualizar -->
             <div class="alert alert-success">
                 {{ session('message') }}
             </div>
+        @elseif (session('alert'))
+            <!-- Mensaje después de eliminar -->
+            <div class="alert alert-danger">
+                {{ session('alert') }}
+            </div>
         @endif
+
 
         <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">
             <i class="fas fa-plus"></i> Agregar Nuevo Producto

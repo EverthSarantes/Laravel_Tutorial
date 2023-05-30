@@ -36,7 +36,7 @@ class ProductController extends Controller
             'brand_id' => $request->brand_id, // Guarda la Marca
         ]);
 
-        return redirect()->route('products.index')->with('message', 'Producto Creado'); // Retorna a la vista de los Productos
+        return redirect()->route('products.index')->with('success', 'Producto Creado'); // Retorna a la vista de los Productos
     }
 
     public function edit($id) // Retorna la vista para Editar los Productos
@@ -74,6 +74,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id); // Obtiene el Producto
         $product->delete(); // Elimina el Producto
 
-        return redirect()->route('products.index')->with('message', 'Producto Eliminado'); // Retorna a la vista de los Productos
+        return redirect()->route('products.index')->with('alert', 'Producto Eliminado'); // Retorna a la vista de los Productos
     }
 }
